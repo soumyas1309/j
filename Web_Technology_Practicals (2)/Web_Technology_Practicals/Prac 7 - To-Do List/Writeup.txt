@@ -1,0 +1,43 @@
+Practical Number: 7
+
+Practical Title: To-Do List Application using DOM Traversal and Updates
+
+Aim:
+Perform DOM traversal and updates; develop a to-do list app with add, edit, and delete features.
+
+Theory:
+Concepts
+1. DOM: the page represented as a tree of elements (nodes) that JavaScript can read and change.
+2. DOM traversal: moving from one element to another, e.g. to the parent (parentElement) or the children (children).
+3. DOM update: creating, changing or removing elements.
+
+Functions, methods and keywords used in the code
+1. var: declares variables (function-scoped). Used to store the references to the page elements.
+2. document.getElementById(): gets an element by id.
+3. addEventListener('click', addTask): runs addTask when the Add button is clicked.
+4. addEventListener('keypress'): adds the task when the Enter key is pressed (event.key === 'Enter').
+5. addTask(): main function that creates a new task.
+6. .value and .trim(): read the task text and remove spaces. An empty task shows alert('Please enter a task!').
+7. document.createElement('li'/'span'/'button'): creates new HTML elements.
+8. .className: sets the CSS class. .textContent: sets the text.
+9. .appendChild(): adds a child element inside a parent (span and buttons into li, li into the list).
+10. .focus(): moves the cursor back to the input box.
+11. prompt(message, default): shows an input box. Used in Edit to get the new task text. It returns null if the user cancels.
+12. Edit: the text of the span is replaced with the new text if it is not empty.
+13. Delete: this.parentElement gets the parent <li> (DOM traversal) and .remove() deletes it from the page.
+14. this: refers to the button that was clicked.
+15. taskList.children: DOM traversal property that gives all the child elements (li) of the list. .length is the number of tasks.
+16. updateTaskCount(): updates the 'tasks pending' text and shows or hides the empty message.
+17. Ternary operator (count !== 1 ? 's pending' : ' pending'): chooses singular or plural text.
+18. classList.add('hidden') / classList.remove('hidden'): hides or shows the empty message.
+
+
+Software Required:
+1. HTML
+2. CSS
+3. JavaScript
+4. Visual Studio Code
+5. Google Chrome
+
+Conclusion:
+A to-do list application was developed. Tasks can be added using the button or the Enter key, edited with a prompt box, and deleted. The task counter is updated every time, and a message appears when no task is present. DOM creation, traversal (parentElement, children) and updates were demonstrated.

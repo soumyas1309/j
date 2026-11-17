@@ -1,0 +1,47 @@
+Practical Number: 10
+
+Practical Title: Loading JSON Data using fetch() and jQuery $.getJSON()
+
+Aim:
+Load and display JSON data using fetch() and jQuery $.getJSON(); render results dynamically in a table.
+
+Theory:
+Concepts
+1. JSON (JavaScript Object Notation): a light text format for exchanging data. Data is written as key-value pairs inside { } and lists inside [ ].
+2. AJAX / asynchronous request: loading data from the server in the background without reloading the page.
+3. Promise: an object that represents a value that will be available in the future (success or failure).
+4. jQuery: a JavaScript library that makes DOM selection, events and AJAX shorter. It is loaded with a <script> tag from a CDN.
+5. CDN: a server that hosts common libraries so that they can be linked by URL.
+
+Part 1 - Functions and methods used in fetch()
+1. loadStudents(): user-defined function called by the Load Students button (onclick).
+2. fetch('students.json'): sends a request for the file and returns a Promise.
+3. .then(function(response){...}): runs when the Promise is successful.
+4. response.json(): reads the response body and converts the JSON text into a JavaScript array.
+5. Second .then(function(data){...}): receives the array and uses it to build the table.
+6. data.forEach(function(student){...}): runs for every student object.
+7. innerHTML: sets or adds the HTML content of the table body. String concatenation (+) builds each row.
+8. student.id, student.name, student.department, student.marks: accessing the properties of an object.
+9. .catch(function(error){...}): runs if the request fails. alert() shows error.message.
+
+Part 2 - Functions and methods used in jQuery
+1. $ or jQuery: the main jQuery function. $("#id") selects an element by id.
+2. .click(function): attaches a click event handler.
+3. $.getJSON(url, callback): loads a JSON file and calls the callback with the data.
+4. .empty(): removes all the content of the selected element (clears old rows).
+5. $.each(data, function(index, student){...}): loops over the array.
+6. .append(html): adds HTML at the end of the selected element (a new table row).
+7. Template literal (`<tr><td>${student.id}</td>...`): builds the row with values.
+8. .fail(function): runs if the JSON file could not be loaded.
+
+Execution note: fetch() and $.getJSON() cannot read a local file when the page is opened by double-clicking (file://), because Chrome blocks it. Open this folder with the Live Server extension of Visual Studio Code (or run python -m http.server in the folder and open http://localhost:8000). jQuery is loaded from the internet (CDN), so an internet connection is needed. students.json must stay in the same folder.
+
+Software Required:
+1. HTML
+2. CSS
+3. JavaScript
+4. Visual Studio Code
+5. Google Chrome
+
+Conclusion:
+JSON data was loaded and displayed in tables by two methods in the same page. Part 1 used fetch() with then() and catch(), and Part 2 used jQuery $.getJSON() with fail(). In both cases the student records from students.json were shown dynamically in a table when the button was clicked.

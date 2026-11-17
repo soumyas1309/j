@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>TaskFlow Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <h1>TaskFlow Pro - Task Dashboard</h1>
+    <p>Date: <span id="currentDate"></span></p>
+
+    <p>
+        <button class="side-link active" data-filter="all">All Tasks</button>
+        <button class="side-link" data-filter="pending">Pending</button>
+        <button class="side-link" data-filter="completed">Completed</button>
+    </p>
+
+    <p><span id="progressText">0% completed</span> | <span id="progressCount">0 of 0 tasks</span></p>
+    <div class="progress-track">
+        <div id="progressBar"></div>
+    </div>
+
+    <p>Total Tasks: <span id="total">0</span></p>
+    <p>Completed: <span id="completed">0</span></p>
+    <p>Pending: <span id="pending">0</span></p>
+    <p>Overdue: <span id="overdue">0</span></p>
+
+    <h2>My Tasks</h2>
+    <button id="clearCompleted">Clear completed</button>
+
+    <form id="taskForm">
+        <p><label for="taskInput">Task Name</label><br>
+        <input id="taskInput" type="text" maxlength="120" placeholder="e.g. Complete Python assignment" required></p>
+        <p><label for="priority">Priority</label><br>
+        <select id="priority">
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+            <option value="Low">Low</option>
+        </select></p>
+        <p><label for="dueDate">Due Date</label><br>
+        <input id="dueDate" type="date"></p>
+        <button type="submit" id="submitButton">Add Task</button>
+        <button type="button" id="cancelEdit" hidden>Cancel Edit</button>
+    </form>
+
+    <p>
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="pending">Pending</button>
+        <button class="filter" data-filter="completed">Completed</button>
+        <input type="search" id="searchInput" placeholder="Search tasks...">
+    </p>
+
+    <div id="taskList"></div>
+    <div id="emptyState">
+        <h3 id="emptyTitle">Your workspace is clear</h3>
+        <p id="emptyMessage">Add your first task and get started.</p>
+    </div>
+
+    <h3>Quick Action</h3>
+    <p>Fetch a sample task using an AJAX request.</p>
+    <button id="loadSample">Load Sample Task</button>
+    <p id="ajaxStatus"></p>
+
+    <script src="script.js"></script>
+</body>
+</html>

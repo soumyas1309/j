@@ -1,0 +1,47 @@
+Practical Number: 6
+
+Practical Title: Email and Password Validation using String Functions and Regular Expressions
+
+Aim:
+Use string functions and regex for email validation, data extraction, and text analysis.
+
+Theory:
+Concepts
+1. String function: a built-in method that works on text, e.g. trim(), includes(), length.
+2. Regular expression (regex): a pattern used to search or validate text, written between slashes, e.g. /[A-Z]/.
+3. Validation: checking whether the input follows the required rules before it is accepted.
+4. Web Storage (localStorage): stores data in the browser permanently as text.
+
+Functions, methods and keywords used in the code
+1. document.addEventListener('DOMContentLoaded', ...): runs the code after the page has loaded.
+2. getElementById(): gets the form sections, inputs and error messages.
+3. addEventListener('click' / 'submit'): attaches functions to the buttons and forms.
+4. e.preventDefault(): stops the form from reloading the page.
+5. style.display = 'none' / 'block': hides or shows the login form, registration form and error messages.
+6. classList.add() / classList.remove(): add or remove the CSS class input-error.
+7. resetErrors(): function that hides all error messages and removes the error classes.
+8. validateEmail(email): returns true if the email contains '@'.
+9. String.includes(): checks whether a text contains a given character.
+10. validatePassword(password): returns true only if all three conditions are true (length >= 8, capital letter, special character).
+11. password.length: number of characters in the password.
+12. RegExp.test(): returns true if the text matches the pattern. /[A-Z]/ checks for a capital letter. /[!@#$%^&*(),.?":{}|<>]/ checks for a special character.
+13. .trim(): removes spaces from the email.
+14. Logical AND (&&): all conditions must be true. !== : checks that two passwords are NOT equal.
+15. localStorage.getItem() / setItem(): read and save the list of registered users.
+16. JSON.stringify(): array to text for saving. JSON.parse(): text back to an array.
+17. getUsers(), saveUser(user), findUserByEmail(email): user-defined functions to read, add and search users.
+18. .push(): adds the new user to the array. .find(): returns the first user that matches the email.
+19. Arrow function: u => u.email === email.
+20. alert(): shows success messages. Template literal in the login alert shows name and date of birth.
+21. form.reset(): clears the form fields.
+
+
+Software Required:
+1. HTML
+2. CSS
+3. JavaScript
+4. Visual Studio Code
+5. Google Chrome
+
+Conclusion:
+A sign-in and registration page with validation was developed. The email is checked with a string function, the password is checked with regular expressions, and the re-entered password must match. Error messages are shown for wrong inputs, a new user is saved in localStorage, and the saved user can sign in successfully. Wrong passwords and unregistered emails are reported.

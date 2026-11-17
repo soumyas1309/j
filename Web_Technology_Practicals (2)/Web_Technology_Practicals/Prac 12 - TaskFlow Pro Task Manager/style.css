@@ -1,0 +1,14 @@
+.progress-track {
+    height: 10px;
+    border: 1px solid black;
+}
+
+#progressBar {
+    height: 100%;
+    width: 0;
+    background-color: black;
+}
+
+.active {
+    font-weight: bold;
+}

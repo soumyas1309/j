@@ -1,0 +1,56 @@
+Practical Number: 12
+
+Practical Title: TaskFlow Pro - Task Manager using jQuery, DOM, Events, Storage and AJAX
+
+Aim:
+Build an interactive real-time web app using JavaScript and jQuery with DOM, events, storage, and AJAX integration.
+
+Theory:
+Concepts
+1. jQuery: a small JavaScript library. Its slogan is 'write less, do more'. It is loaded from a CDN.
+2. DOM manipulation: changing the page content, attributes and styles using code.
+3. Event handling: responding to user actions such as click, change, input and submit.
+4. AJAX (Asynchronous JavaScript and XML): sends a request to a server and gets the data without reloading the page.
+5. Web Storage (localStorage): saves the tasks permanently in the browser.
+
+Functions, methods and keywords used in the code
+1. $(document).ready(function(){...}): runs the code only after the page is fully loaded.
+2. $('#id') / $('.class'): select elements by id or class.
+3. .text(): get or set text. .val(): get or set the value of a field. .attr(): set an attribute (e.g. min of the date).
+4. .prop(): set a property such as hidden, checked or disabled.
+5. .css(): set a style (the progress bar width).
+6. .addClass() / .removeClass(): add or remove CSS classes.
+7. .empty(): remove all child elements of an element. .append() / .appendTo(): add elements inside another element.
+8. $('<div>'): creates a new element. Method chaining: calling several methods one after another on the same element.
+9. .on('click' / 'change' / 'input' / 'submit', function): attach event handlers.
+10. .data('filter'): reads the data-filter attribute of an element.
+11. .animate(): animates a property. Here it scrolls the page smoothly to the form when Edit is clicked.
+12. .offset(): gets the position of an element. .focus(): moves the cursor into a field.
+13. try { } catch(error) { }: handles errors while reading and saving localStorage.
+14. localStorage.getItem() / setItem(), JSON.parse() / JSON.stringify(): save and read the task array.
+15. Array.isArray(): checks the saved value is an array.
+16. let tasks = [] : array of task objects {id, title, priority, dueDate, completed}.
+17. .push(), .filter(), .find(): add a task, remove or filter tasks, and find a task to edit.
+18. .includes() and .toLowerCase(): case-insensitive search of the task title.
+19. .trim(): removes spaces. .charAt(0).toUpperCase() + .slice(1): makes the first letter capital.
+20. new Date(), toLocaleDateString('en-IN', {...}), getFullYear(), getMonth(), getDate(), padStart(): create and format dates (today, due date).
+21. isOverdue(task): returns true if the due date is before today and the task is not completed.
+22. updateStats(): calculates total, completed, pending, overdue and the percentage for the progress bar. Math.round() rounds the percentage.
+23. renderTasks(): redraws the task list according to the selected filter and search text.
+24. event.preventDefault(): stops the form from reloading the page. this.reset(): clears the form.
+25. editingId: variable that remembers which task is being edited.
+26. $.ajax({url, method, success, error, complete}): sends the AJAX request. success runs on a good response, error runs on failure, complete runs in both cases.
+27. Math.random() and Math.ceil(): choose a random sample task number from 1 to 20.
+28. https://jsonplaceholder.typicode.com/todos/N: a free online test API that returns a sample task in JSON.
+
+Execution note: jQuery is loaded from the internet (CDN) and the sample task comes from jsonplaceholder.typicode.com, so an internet connection is needed for jQuery and for the Load Sample Task button.
+
+Software Required:
+1. HTML
+2. CSS
+3. JavaScript
+4. Visual Studio Code
+5. Google Chrome
+
+Conclusion:
+A task manager web application was developed using JavaScript and jQuery. Tasks can be added, edited, completed, deleted, filtered by status and searched, the statistics and progress bar update instantly, tasks are saved in localStorage, and a sample task is loaded using an AJAX request.

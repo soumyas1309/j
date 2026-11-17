@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ClassFlow Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>ClassFlow Dashboard</h1>
+    <p>Current Time: <span id="clock">--:--:--</span></p>
+
+    <p>Total Classes: <span id="classCount">0</span></p>
+    <p>Timer Status: <span id="focusStatus">Ready</span></p>
+    <p>Next Class: <span id="nextClass">None</span></p>
+
+    <h2>Focus Timer</h2>
+    <h1 id="timer">25:00</h1>
+    <div class="progress">
+        <div id="progressBar"></div>
+    </div>
+    <p><label for="minutes">Duration in minutes</label>
+    <input type="number" id="minutes" min="1" max="180" value="25"></p>
+    <button id="start">Start</button>
+    <button id="pause">Pause</button>
+    <button id="reset">Reset</button>
+    <p id="timerMessage">Ready to focus</p>
+
+    <h2>Class Schedule</h2>
+    <form id="classForm">
+        <p><label for="subject">Subject</label><br>
+        <input type="text" id="subject" placeholder="Enter subject" required></p>
+        <p><label for="classTime">Class time</label><br>
+        <input type="time" id="classTime" required></p>
+        <p><label for="room">Room</label><br>
+        <input type="text" id="room" placeholder="Enter room or lab"></p>
+        <button type="submit">Add Class</button>
+    </form>
+    <div id="classList"></div>
+    <p id="emptyMessage">No classes added yet.</p>
+
+    <script src="script.js"></script>
+</body>
+</html>

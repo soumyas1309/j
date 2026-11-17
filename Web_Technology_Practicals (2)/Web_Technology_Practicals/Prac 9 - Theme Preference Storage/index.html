@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Theme Preference</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Theme Preference</h1>
+
+    <button onclick="setTheme('light')">Light Theme</button>
+    <button onclick="setTheme('dark')">Dark Theme</button>
+    <button onclick="clearTheme()">Clear Preference</button>
+
+    <p id="message">No theme selected yet</p>
+
+    <p>localStorage: <span id="localValue">—</span></p>
+    <p>sessionStorage: <span id="sessionValue">—</span></p>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+WEB TECHNOLOGY PRACTICALS - VERIFICATION REPORT
+(Folders are named "Prac N - <practical name>"; the practical numbers below are unchanged.)
+================================================
+Source code : java-lab-main.zip (GitHub)
+Aims        : college practical aim list (image) + the Exp PDFs inside the zip
+Testing     : headless Chromium 153 (Playwright), pages opened exactly as index.html files
+
+
+1. MAIN TABLE
+-------------
+
+| Practical | Original GitHub File | Code Preserved | Corrections | Execution Status |
+|---|---|---|---|---|
+| 1  | Java practical 1/index.html, script.js, style.css | JS: byte-identical | None | EXECUTED in Chromium. 6/6 checks passed |
+| 2  | Java practical 2/index.html, script.js, style.css | JS: byte-identical | None | EXECUTED in Chromium. 9/9 checks passed |
+| 3  | Java practical 3/index.html, script.js, style.css | JS: byte-identical | None | EXECUTED in Chromium. 8/8 checks passed |
+| 4  | Java practical 4/palidorne checker/ | JS: byte-identical | None | EXECUTED in Chromium. 6/6 checks passed |
+| 5  | Java practical 5/shopping cart/ | JS: byte-identical | None | EXECUTED in Chromium. 9/9 checks passed |
+| 6  | Java practical 6/EMAIL VALIDATION/ | JS: byte-identical | HTML only: removed the external Amazon logo image | EXECUTED in Chromium. 9/9 checks passed |
+| 7  | Java practical 7/to do list/ | JS: byte-identical | None | EXECUTED in Chromium. 7/7 checks passed |
+| 8  | Java practical 8/ (card-style form, root folder) | JS: byte-identical | None | EXECUTED in Chromium. 10/10 checks passed |
+| 9  | Java practical 9/theme implementation/ | JS: byte-identical | index.html held TWO complete HTML documents pasted one after another (an empty stub + the real page). Kept only the real page. JS untouched | EXECUTED in Chromium. 8/8 checks passed |
+| 10 | java practical 10/part 1/index.html (inline script) + part 2/index.html (inline script) + students.json | Logic identical. Both inline scripts moved into script.js | Part 1 and Part 2 were separate pages with the same ids (loadBtn, studentTable, tableBody). To put both on one page, Part 2 ids were renamed: loadBtn -> jqLoadBtn, tableBody -> jqTableBody, studentTable -> jqStudentTable | EXECUTED over http://localhost (5/5 checks). DOUBLE-CLICK (file://) DOES NOT WORK - see section 3 |
+| 11 | java practical 11/index.html, script.js, style.css | JS: byte-identical | None | EXECUTED in Chromium. 12/12 checks passed (includes a full 1-minute countdown to the "Time is up" alert) |
+| 12 | java practical 12/index.html, script.js, style.css | JS: byte-identical | None | EXECUTED in Chromium. 13/13 checks passed. AJAX call used a MOCKED response, jQuery served from a local copy (see section 4) |
+
+Total: 102 assertions passed, 0 failed (plus 2 informational observations for Prac 10 on file://).
+"JS: byte-identical" was checked with a file comparison against the GitHub file.
+No practical is missing from the GitHub zip. All 12 were found.
+
+
+2. MAPPING NOTES AND UNCERTAINTIES (please read before the exam)
+-----------------------------------------------------------------
+The GitHub code was mapped by what the program actually does, and cross-checked with the title written in
+each Exp PDF. Where your GitHub code does not show every item in the college aim, I did NOT add it.
+
+Prac 1  - Aim says inline, internal and external JavaScript. The original has one external script.js, plus the
+          inline onclick="showWelcome()" attribute. No internal <script> block exists in the original.
+Prac 2  - Aim says var, let, const, template literals, destructuring. The original uses let, const and template
+          literals. It has no var and no destructuring.
+Prac 4  - Aim says "apply try-catch". The palindrome checker (matches the Exp 4 PDF title) has closures and
+          functions but NO try-catch. The try-catch code is in "Java practical 4/vehicle regestration"
+          (a case study). It was not used. If your examiner asks for try-catch, tell me and I can add that file's
+          logic.
+Prac 6  - The Exp 6 PDF prints the Amazon sign-in/registration code, so that was used. It uses includes() and
+          regex for validation. "Data extraction / text analysis" (reverse string, vowel count with regex match)
+          is in the CASE STUDY folder, which was not used.
+Prac 8  - Two versions exist in GitHub. The card-style form (live checks with input/blur/change events) matches the
+          aim "live input checks" and was used. The table-style form ("new updated gym from") was not used.
+Prac 11 - Aim says setTimeout(), setInterval() and ES6 modules. The original uses setInterval/clearInterval with
+          Date.now() and localStorage. There is no setTimeout() call and no import/export. Not invented.
+          (Note: ES6 modules also do not run from a double-clicked file in Chrome.)
+Prac 12 - Mapped to your TaskFlow Pro code. The college list shows "VA 11" and "VA 12"; they were treated as
+          Practical 11 and 12.
+Prac 3, 5, 7, 9, 10 - code matches the aim; no uncertainty.
+
+GitHub folders NOT used (case studies / alternate versions):
+  Java practical 4/vehicle regestration, Java practical 5/arrays case study, Java practical 6/CASE STUDY,
+  Java practical 7/case study, Java practical 8/new updated gym from, Java practical 9/case study,
+  java practical 10/part 1/case study (employees), java practical 10/part 2/case study (orders).
+
+
+3. DEVIATIONS FROM THE "EXACTLY FOUR FILES" AND "DOUBLE-CLICK" RULES
+--------------------------------------------------------------------
+Prac 10 has FIVE files: index.html, style.css, script.js, Writeup.txt and students.json.
+  Reason: fetch("students.json") and $.getJSON("students.json") read that file, so the practical cannot work
+  without it. All other practicals have exactly four files.
+
+Prac 10 cannot be run by double-clicking index.html. Tested in Chromium: from file:// both fetch() and
+$.getJSON() fail ("Failed to fetch"). Chrome blocks reading local files this way. Your original code has the same
+limit. To run it:
+  - VS Code: right-click index.html -> "Open with Live Server", OR
+  - Terminal in the "Prac 10 - Load JSON using fetch and jQuery" folder: python -m http.server 8000, then open http://localhost:8000
+This is also written in Prac 10 - Load JSON using fetch and jQuery/Writeup.txt.
+
+INTERNET is needed for:
+  - Prac 10 and Prac 12: jQuery is loaded from https://code.jquery.com (as in your original code).
+  - Prac 12: the "Load Sample Task" button calls https://jsonplaceholder.typicode.com.
+If the exam lab has no internet, jQuery will not load and these two will not work. Tell me and I can bundle a
+local jquery.min.js file (this adds a file).
+
+
+4. WHAT "EXECUTED" MEANS HERE (and what was NOT verified)
+---------------------------------------------------------
+Three levels were used:
+  A. Code inspected : all 12 original files and the aim list were read.
+  B. Syntax checked : node --check passed on all 12 script.js files.
+  C. Executed       : every practical was opened in headless Chromium, real clicks/typing were simulated,
+                      and results were compared with expected values, for example:
+                      Prac 2 bill: 2 x 1000 with 10% discount and 18% GST -> grand total 2124.00
+                      Prac 5 cart: Pen 3 x 10 + Laptop 30000 -> total 30,030.00, final 24,024.00
+                      Prac 11 timer: counted down 01:00 to 00:00 and the completion alert appeared.
+                      Each run also checked for JavaScript page errors: none were found.
+
+Not verified / limits:
+  - Tests ran on headless Chromium in a sandbox, not on your own computer or the college lab PCs.
+  - Prac 10 and 12: this sandbox has no internet, so the jQuery CDN request was answered with an identical
+    local copy of jQuery 3.7.1 during testing. Prac 12's AJAX call to jsonplaceholder was answered with a
+    MOCKED response. The real internet call was not tested.
+  - Prac 2 "Print Bill" button: it only calls window.print(); the print dialog was not tested.
+  - Prac 1 prints console.error("... (Demo Purpose)") on purpose. It shows as a red console error. That is
+    the original code's design, not a bug.
+  - Layout/appearance was not visually reviewed in a screenshot comparison.
+
+
+5. WHAT WAS CHANGED FROM YOUR GITHUB FILES
+------------------------------------------
+JavaScript : copied unchanged for Prac 1-9, 11, 12. Prac 10: two inline scripts joined (3 id names changed).
+HTML       : simplified to plain basic HTML. Removed decorative parts only: header/nav/footer banners, cards,
+             emojis, logos, Google Fonts links, sidebars/profile boxes, "forgot password"/"remember me", etc.
+             Every element and id that the JavaScript uses was kept. Prac 12 keeps both filter button rows
+             (the JS has handlers for both).
+CSS        : style.css is EMPTY for Prac 1, 4 and 8 (browser default look is enough).
+             Short CSS (a few lines, no colours/gradients/shadows/animations) only where something needs it:
+               Prac 2, 3, 5, 10 : black table borders so tables are readable
+               Prac 6           : .error-message { display:none } (messages must stay hidden until JS shows them)
+               Prac 7           : .hidden { display:none } (the JS adds/removes this class)
+               Prac 9           : body.dark { black background, white text } (this IS the theme feature)
+               Prac 11, 12      : progress bar height/colour (without it the bar is invisible)
+               Prac 12          : .active bold (shows which filter is selected)
+Prac 8     : the original had an empty "spinner" element used only for a CSS loading effect; it was dropped
+             (the JS only stores it in a variable and never uses it). Behaviour is unchanged.

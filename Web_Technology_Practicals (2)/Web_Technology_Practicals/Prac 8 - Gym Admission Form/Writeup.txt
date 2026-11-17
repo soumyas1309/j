@@ -1,0 +1,44 @@
+Practical Number: 8
+
+Practical Title: Gym Admission Form with Live Input Validation
+
+Aim:
+Access and validate form fields using events; design a gym admission form with live input checks.
+
+Theory:
+Concepts
+1. Event: an action by the user that the browser detects.
+2. input event: occurs every time the value of a field changes (every key typed). Used for live validation.
+3. blur event: occurs when a field loses focus.
+4. change event: occurs when a selection or value is changed and the field is left (select box).
+5. submit event: occurs when the form is submitted.
+6. Live validation: checking the input while the user is typing and showing the error immediately.
+
+Functions, methods and keywords used in the code
+1. document.addEventListener('DOMContentLoaded', function): runs after the page is loaded.
+2. getElementById(): accesses the form fields and the error spans.
+3. this: the field that fired the event. this.value is its value.
+4. .trim(): removes spaces from the input.
+5. Regular expression /^[A-Za-z\s]+$/ and .test(): allow only letters and spaces in the name. The email pattern /^[^\s@]+@[^\s@]+\.[^\s@]+$/ checks the email format.
+6. parseInt(): converts the age to a number. isNaN() checks for an invalid number.
+7. if / else if / else: choose the error message. Age must be 16 to 60.
+8. .replace(/\D/g, ''): removes all non-digit characters from the mobile number. .slice(0, 10): keeps only the first 10 digits.
+9. textContent: sets the error message text.
+10. style.borderColor: changes the border colour of the field (red for error, green for valid).
+11. e.preventDefault(): stops the default form submission.
+12. hasErrors: a variable that checks whether any error message is present. The form is rejected if there is an error.
+13. form.querySelector('.error:not(:empty)'): finds the first error message. scrollIntoView(): scrolls the page to it.
+14. classList.add('loading') / remove(): adds or removes the loading class. disabled = true: disables the button while submitting.
+15. setTimeout(function, 1500): shows the success message after 1.5 seconds. A second setTimeout hides it after 5 seconds.
+16. form.reset(): clears the form after a successful submission.
+
+
+Software Required:
+1. HTML
+2. CSS
+3. JavaScript
+4. Visual Studio Code
+5. Google Chrome
+
+Conclusion:
+A gym admission form with live validation was developed. The name, age, email, mobile number and plan are checked using input, blur and change events, and error messages appear and disappear as the user types. When all fields are valid and the form is submitted, a success message is displayed and the form is cleared.

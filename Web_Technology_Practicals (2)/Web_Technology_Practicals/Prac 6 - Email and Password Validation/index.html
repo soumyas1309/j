@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Sign-In and Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="loginSection">
+        <h2>Sign-In</h2>
+        <form id="loginForm">
+            <p><label for="loginEmail">Email</label><br>
+            <input type="email" id="loginEmail" name="loginEmail" required>
+            <div class="error-message" id="loginEmailError">Please enter a valid email address.</div></p>
+
+            <p><label for="loginPassword">Password</label><br>
+            <input type="password" id="loginPassword" name="loginPassword" required>
+            <div class="error-message" id="loginPasswordError">Incorrect password format.</div></p>
+
+            <div class="error-message" id="loginGlobalError"></div>
+
+            <button type="submit">Sign-In</button>
+        </form>
+
+        <p>New user?</p>
+        <button id="showRegisterBtn">Create your account</button>
+    </div>
+
+    <div id="registerSection" style="display: none;">
+        <h2>Create account</h2>
+        <form id="registrationForm">
+            <p><label for="name">Your name</label><br>
+            <input type="text" id="name" name="name" placeholder="First and last name" required></p>
+
+            <p><label for="dob">Date of Birth</label><br>
+            <input type="date" id="dob" name="dob" required></p>
+
+            <p><label for="email">Email</label><br>
+            <input type="email" id="email" name="email" required>
+            <div class="error-message" id="emailError">Please enter a valid email address containing '@'.</div></p>
+
+            <p><label for="password">Password</label><br>
+            <input type="password" id="password" name="password" placeholder="At least 8 characters" required><br>
+            Passwords must be at least 8 characters, contain 1 capital letter and 1 special character.
+            <div class="error-message" id="passwordError">Password must be at least 8 characters, contain 1 capital letter and 1 special character.</div></p>
+
+            <p><label for="passwordCheck">Re-enter password</label><br>
+            <input type="password" id="passwordCheck" name="passwordCheck" required>
+            <div class="error-message" id="passwordCheckError">Passwords must match.</div></p>
+
+            <div class="error-message" id="registerGlobalError"></div>
+
+            <button type="submit">Continue</button>
+        </form>
+
+        <p>Already have an account? <a href="#" id="showLoginBtn">Sign in</a></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

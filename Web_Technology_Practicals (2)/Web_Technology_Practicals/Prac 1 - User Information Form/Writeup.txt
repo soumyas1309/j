@@ -1,0 +1,41 @@
+Practical Number: 1
+
+Practical Title: User Information Form using HTML, CSS and JavaScript
+
+Aim:
+Demonstrate inline, internal, and external JavaScript; use console methods; create a webpage showing user info and a welcome message.
+
+Theory:
+Concepts from the aim
+1. JavaScript: a scripting language that makes a web page interactive. It runs in the browser.
+2. Inline JavaScript: JavaScript written inside an HTML tag attribute, e.g. onclick="showWelcome()".
+3. Internal JavaScript: JavaScript written between <script> and </script> tags inside the same HTML file.
+4. External JavaScript: JavaScript written in a separate .js file and linked with <script src="script.js"></script>. It can be reused by many pages.
+5. DOM (Document Object Model): the tree structure of the page that JavaScript uses to read and change HTML elements.
+6. Console: the browser tool (F12) used to see messages and errors printed by the program.
+
+Functions, methods and keywords used in the code
+1. alert(message): shows a pop-up message box. Used for the welcome message, the validation message and the thank-you message.
+2. function showWelcome(): a user-defined function (block of code that runs when it is called). It is called by the Submit button.
+3. onclick: an event attribute. The function is executed when the button is clicked.
+4. document.getElementById(id): returns the HTML element that has the given id.
+5. .value: property that gives the text or selection entered in an input or select box.
+6. let: declares a block-scoped variable whose value can change. It stores each form value.
+7. if statement with || (OR) operator: checks if any field is empty (== ""). If yes, an alert is shown.
+8. return: stops the function immediately (used when a field is empty).
+9. .innerHTML: property that sets the HTML content of an element. Used to show the welcome message and the details on the page.
+10. String concatenation (+): joins text and variables into one string to build the output.
+11. console.log(): prints a normal message in the console.
+12. console.warn(): prints a warning message (yellow) in the console.
+13. console.error(): prints an error message (red) in the console.
+
+
+Software Required:
+1. HTML
+2. CSS
+3. JavaScript
+4. Visual Studio Code
+5. Google Chrome
+
+Conclusion:
+A user information form was created. The page uses an external CSS file and an external JavaScript file, and the Submit button calls the function through an inline onclick handler. The program shows a welcome alert on loading, checks empty fields, displays the welcome message with the entered details on the page, prints the details with console.log(), console.warn() and console.error(), and shows a thank-you alert.

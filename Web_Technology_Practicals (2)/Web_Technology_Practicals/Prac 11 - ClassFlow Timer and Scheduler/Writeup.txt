@@ -1,0 +1,47 @@
+Practical Number: 11
+
+Practical Title: ClassFlow Dashboard - Focus Timer and Class Scheduler using JavaScript Timers
+
+Aim:
+Use JavaScript timers (setTimeout(), setInterval()) and ES6 modules (import/export) to build a dynamic countdown or class scheduler with real-time updates and responsive layout.
+
+Theory:
+Concepts from the aim
+1. setTimeout(function, delay): runs a function ONCE after the given delay in milliseconds.
+2. setInterval(function, delay): runs a function AGAIN and AGAIN after every delay until it is stopped.
+3. clearInterval(id) / clearTimeout(id): stop a running interval / timeout.
+4. ES6 modules: a way to divide code into files. 'export' makes a function or variable available and 'import' brings it into another file.
+5. Responsive layout: a page layout that adjusts to different screen sizes.
+
+Functions, methods and keywords used in the code
+1. const / let: const for fixed references (elements), let for values that change (remaining time, running).
+2. setInterval(tick, 200): calls tick() every 200 ms to update the countdown. setInterval(updateClock, 1000) updates the clock every second.
+3. clearInterval(interval): stops the timer (stopInterval()).
+4. Date.now(): current time in milliseconds. The end time = Date.now() + remaining x 1000. The remaining time is recalculated from the system clock each tick, so it stays accurate.
+5. Math.ceil(), Math.floor(), Math.max(): rounding up, rounding down and choosing the larger value (so the time never goes below 0).
+6. String().padStart(2, '0'): adds a leading zero, so 5 becomes 05.
+7. startTimer(), pauseTimer(), resetTimer(), tick(), showTime(), updateStatus(): user-defined functions for the countdown.
+8. element.style.width: the progress bar width is set as a percentage of the time left.
+9. addEventListener('click' / 'change' / 'submit'): attach the Start, Pause, Reset buttons, duration box and class form.
+10. Number() and Number.isInteger(): convert and validate the duration (1 to 180 minutes).
+11. alert(): shows 'Time is up!' and error messages.
+12. try { } catch { }: handles errors. Used when reading the saved classes and when saving, so the page does not crash.
+13. localStorage.getItem() / setItem(): store the class list. JSON.parse() / JSON.stringify(): convert between text and array.
+14. Array.isArray(): checks that the saved data is an array.
+15. new Date(), toLocaleTimeString(), getHours(), getMinutes(): get and format the current time for the clock and to find the next class.
+16. .sort() with localeCompare(): sorts the classes by time.
+17. .find(): finds the next class. .filter(): removes a deleted class. .split(':').map(Number): converts '10:30' into numbers [10, 30].
+18. document.createElement(), .append(), replaceChildren(): create and place the class list items.
+19. event.preventDefault() and form.reset(): handle the add class form.
+20. Math.random().toString(16): random text used with Date.now() to make a unique id.
+
+
+Software Required:
+1. HTML
+2. CSS
+3. JavaScript
+4. Visual Studio Code
+5. Google Chrome
+
+Conclusion:
+A dashboard with a live clock, a focus timer and a class scheduler was developed. The clock updates every second, the timer can be started, paused and reset with a progress bar and an alert when time is over, and classes can be added and deleted with real-time updates of the class count and the next class. Timing events (setInterval and clearInterval) and localStorage were demonstrated.

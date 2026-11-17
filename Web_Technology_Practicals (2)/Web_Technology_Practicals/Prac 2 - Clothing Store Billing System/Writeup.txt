@@ -1,0 +1,53 @@
+Practical Number: 2
+
+Practical Title: Clothing Store Billing System
+
+Aim:
+Use var, let, const, and demonstrate basic features like template literals and destructuring; build a billing calculator with user input.
+
+Theory:
+Concepts from the aim
+1. var: declares a function-scoped variable. It can be redeclared and changed.
+2. let: declares a block-scoped variable. It can be changed but not redeclared in the same scope.
+3. const: declares a block-scoped variable that cannot be reassigned.
+4. Template literal: a string written inside back-quotes (`) in which a value can be inserted using ${ }.
+5. Destructuring: a short way to take values out of an array or object into separate variables, e.g. const {a, b} = obj.
+
+Functions, methods and keywords used in the code
+1. let billItems = [] / let discountPercent: global variables that keep the list of items and the discount. They change while the program runs.
+2. const elements = {...}: an object that stores references to all the page elements, so the code does not search for them again and again.
+3. Object: a collection of key-value pairs. Each bill item is an object with id, brand, name, size, color, price, qty, gstRate and total.
+4. addEventListener(event, function): attaches a function to an event. 'change' runs when the brand is selected, 'input' runs when the discount is typed.
+5. this: refers to the element on which the event occurred.
+6. parseFloat(): converts text to a decimal number (price, GST, discount).
+7. parseInt(): converts text to a whole number (quantity).
+8. isNaN(): checks whether a value is 'Not a Number'. Used in validation.
+9. .trim(): removes spaces from both ends of a text.
+10. Ternary operator (condition ? a : b): short form of if-else. Used to choose the custom brand or the selected brand.
+11. addItem(): validates the input, creates the item object, pushes it into the array and refreshes the table and totals.
+12. Date.now(): returns the current time in milliseconds. Used to give every item a unique id.
+13. .push(): adds a new element at the end of an array.
+14. .filter(): creates a new array with only the items that satisfy a condition. removeItem() uses it to delete an item by id.
+15. Arrow function (item => ...): a short way of writing a function.
+16. .reduce(): goes through an array and combines all values into one value. Used to add all item totals to get the subtotal.
+17. .forEach(): runs a function once for every element of the array. Used to create each table row and to calculate GST per item.
+18. document.createElement('tr') and .appendChild(): create a new HTML element and add it to the page.
+19. .innerHTML / .textContent: set the content of an element. Template literals are used to write the table row.
+20. .toFixed(2): rounds a number to 2 decimal places for money values.
+21. element.style.display: shows or hides an element (custom brand box, discount line, empty row).
+22. confirm(): shows an OK/Cancel box. Used before clearing the bill.
+23. alert(): shows a message box. Used when the input is wrong.
+24. window.print(): opens the print dialog to print the bill.
+25. renderTable(), updateTotals(), clearInputs(), clearBill(): user-defined functions that redraw the table, calculate subtotal, discount, CGST, SGST and grand total, and reset the form.
+26. Calculation: Discount = subtotal x discount%. GST = (item total - item discount) x GST rate. CGST = SGST = GST / 2. Grand total = discounted subtotal + CGST + SGST.
+
+
+Software Required:
+1. HTML
+2. CSS
+3. JavaScript
+4. Visual Studio Code
+5. Google Chrome
+
+Conclusion:
+A clothing store billing calculator was developed. Items can be added to and removed from the bill, a discount percentage can be applied, and the subtotal, discount, CGST, SGST and grand total are calculated correctly. The program uses let and const to declare variables and template literals to build the table rows and the displayed amounts. The bill can be printed or cleared.

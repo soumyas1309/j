@@ -1,0 +1,47 @@
+Practical Number: 4
+
+Practical Title: Palindrome Checker using Functions, Scope and Closures
+
+Aim:
+Use function types, scope, and closures; apply try-catch; build a palindrome checker.
+
+Theory:
+Concepts from the aim
+1. Function: a block of code that performs a task and can be reused.
+2. Function declaration: function name() { } - can be called before it is defined (hoisting).
+3. Function expression: a function stored in a variable, e.g. const f = function() { }.
+4. Arrow function: a short form of function, e.g. () => msg.
+5. Scope: the area where a variable can be used. Global scope = everywhere. Function/local scope = only inside the function. Block scope = only inside { } (let and const).
+6. Closure: an inner function that remembers the variables of its outer function even after the outer function has finished.
+7. try-catch: handles errors. Code that may fail is placed in try, and the error is handled in catch without stopping the program.
+8. Palindrome: a word that reads the same forward and backward, e.g. racecar, madam.
+
+Functions, methods and keywords used in the code
+1. reverseString(str): user-defined function that returns the reversed string.
+2. .split(""): breaks a string into an array of single characters.
+3. .reverse(): reverses the order of the elements of an array.
+4. .join(""): joins the elements of an array into a string.
+5. message(): outer function. It declares const msg and returns an arrow function () => msg. This returned function is a CLOSURE because it still remembers msg.
+6. const showMessage = message(): stores the returned inner function. showMessage() gives the text 'Palindrome Checker'.
+7. document.getElementById(): gets an element by id. .innerText sets the text shown in the element.
+8. checkPalindrome(): main function. It reads the word, reverses it and compares.
+9. .trim(): removes extra spaces from the word.
+10. .toLowerCase(): converts to lower case so that the comparison ignores upper and lower case (Racecar = racecar).
+11. === (strict equality): compares value and type. Used to compare the word with the reversed word.
+12. if / else: shows 'is a Palindrome' or 'Not a Palindrome'. if (!word) handles an empty box.
+13. Template literal (`"${word}" is a Palindrome!`): builds the result text.
+14. showResult(text, type): function that displays the message and sets the class (success, error or info).
+15. className: sets the CSS class of an element.
+16. addEventListener('keypress'): runs checkPalindrome() when the Enter key is pressed (event.key === 'Enter').
+17. .focus(): puts the cursor in the input box.
+
+
+Software Required:
+1. HTML
+2. CSS
+3. JavaScript
+4. Visual Studio Code
+5. Google Chrome
+
+Conclusion:
+A palindrome checker was developed. The function reverseString() reverses the entered word, and the closure created by message() supplies the heading text. The program reports whether the word is a palindrome ignoring case, asks the user to enter a word if the box is empty, and also works with the Enter key.

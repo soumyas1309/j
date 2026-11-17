@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>SIT Student Portal - Grading System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>SIT Student Portal - Grading System</h1>
+
+    <div id="loginSection">
+        <h2>Student Portal Access</h2>
+        <p>Enter your Enrollment Number and Password to continue.</p>
+
+        <form id="loginForm">
+            <p><label for="username">Enrollment Number</label><br>
+            <input type="text" id="username" required></p>
+
+            <p><label for="password">Password</label><br>
+            <input type="password" id="password" required></p>
+
+            <button type="submit">LOGIN</button>
+        </form>
+
+        <div id="loginMessage" class="message"></div>
+    </div>
+
+    <div id="gradingSection" style="display: none;">
+        <h2>Enter Student Marks</h2>
+        <button id="logoutBtn">Logout</button>
+
+        <form id="gradingForm">
+            <p><input type="text" id="studentName" placeholder="Student Name" required></p>
+            <p><input type="number" id="math" placeholder="Maths (0-100)" min="0" max="100" required></p>
+            <p><input type="number" id="science" placeholder="Science (0-100)" min="0" max="100" required></p>
+            <p><input type="number" id="english" placeholder="English (0-100)" min="0" max="100" required></p>
+            <p><input type="number" id="history" placeholder="History (0-100)" min="0" max="100" required></p>
+            <button type="submit">Add Record</button>
+        </form>
+
+        <h3>Student Results</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Total</th>
+                    <th>%</th>
+                    <th>Grade</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="resultBody">
+            </tbody>
+        </table>
+        <div id="emptyMsg">No records found. Add a student above.</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

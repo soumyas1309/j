@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping Cart Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Shopping Cart Calculator</h1>
+
+    <h2>Add New Product</h2>
+    <input type="text" id="productName" placeholder="Product Name (e.g., Pen, Laptop)">
+    <input type="number" id="price" placeholder="Price (₹)" min="0" step="0.50">
+    <input type="number" id="quantity" placeholder="Quantity" min="1" value="1">
+    <button onclick="addProduct()">Add Product</button>
+
+    <h2>Cart Items</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Product Name</th>
+                <th>Price (₹)</th>
+                <th>Qty</th>
+                <th>Total (₹)</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="cartBody">
+        </tbody>
+    </table>
+
+    <p>Total Amount: <span id="totalAmount">₹0.00</span></p>
+    <p>Discount (20%): <span id="discountAmount">-₹0.00</span></p>
+    <p><strong>Final Amount: <span id="finalAmount">₹0.00</span></strong></p>
+
+    <h3>Low-Cost Items (Price &lt; ₹1000)</h3>
+    <ul id="lowCostList"></ul>
+    <p id="noLowCost">No low-cost items found.</p>
+
+    <h3>Expensive Items (Price &gt; ₹1000)</h3>
+    <ul id="expensiveList"></ul>
+    <p id="noExpensive">No expensive items found.</p>
+
+    <h3>Item Summary</h3>
+    <ul id="itemSummary"></ul>
+
+    <script src="script.js"></script>
+</body>
+</html>

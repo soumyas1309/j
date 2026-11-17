@@ -1,0 +1,39 @@
+Practical Number: 9
+
+Practical Title: Theme Preference using localStorage and sessionStorage
+
+Aim:
+Implement localStorage and sessionStorage to save user preferences like theme settings.
+
+Theory:
+Concepts
+1. Web Storage API: lets a web page store data in the browser as key-value pairs.
+2. localStorage: data is kept permanently, even after the browser is closed, until it is deleted.
+3. sessionStorage: data is kept only for the current browser tab and is deleted when the tab is closed.
+4. Storage limit: about 5 MB per website. Only text can be stored.
+
+Functions, methods and keywords used in the code
+1. window.onload = function(): runs when the whole page has loaded. Used to restore the saved theme.
+2. localStorage.getItem('theme'): reads the saved theme. Returns null if nothing is saved.
+3. localStorage.setItem('theme', theme): saves the theme permanently.
+4. sessionStorage.setItem('currentTheme', theme): saves the theme only for the current session.
+5. localStorage.removeItem() / sessionStorage.removeItem(): delete the saved key.
+6. setTheme(theme): user-defined function. Applies the theme, saves it in both storages, updates the display and the message.
+7. applyTheme(theme): adds the class 'dark' to the body for dark theme, and removes it for light theme.
+8. document.body.classList.add() / remove(): adds or removes a CSS class. The CSS class body.dark changes the colours.
+9. clearTheme(): removes the saved theme and returns to the default look.
+10. updateStorageDisplay(): shows the stored values on the page. The || "—" part shows a dash if nothing is stored.
+11. document.getElementById().innerText: changes the text of an element (messages and stored values).
+12. let: variable declaration. if (savedTheme): runs only when a theme was saved.
+13. onclick attribute: the buttons call setTheme('light'), setTheme('dark') and clearTheme().
+
+
+Software Required:
+1. HTML
+2. CSS
+3. JavaScript
+4. Visual Studio Code
+5. Google Chrome
+
+Conclusion:
+Theme preference saving was implemented. The user can select the Light or Dark theme, the choice is stored in localStorage and sessionStorage and displayed on the page, the theme is restored automatically after reloading the page, and the preference can be cleared.

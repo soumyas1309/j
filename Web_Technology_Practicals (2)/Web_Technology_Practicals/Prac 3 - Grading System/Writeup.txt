@@ -1,0 +1,50 @@
+Practical Number: 3
+
+Practical Title: Grading System with Login Form Validation
+
+Aim:
+Implement control structures and form validation; create a grading system based on user-entered marks.
+
+Theory:
+Concepts
+1. Control structure: a statement that controls the flow of the program, such as if-else (decision) and for loop (repetition).
+2. Form validation: checking the data entered by the user before accepting it, e.g. password rules and empty names.
+3. Event: an action such as a click or a form submit that JavaScript can respond to.
+
+Functions, methods and keywords used in the code
+1. addEventListener('submit', function): runs the function when a form is submitted.
+2. event.preventDefault(): stops the default action of the form (page reload) so that JavaScript can handle it.
+3. var / let / const: variable declarations. var is function-scoped, let and const are block-scoped (const cannot be reassigned).
+4. for loop: repeats code for each character of the password (i from 0 to password.length).
+5. password.length: gives the number of characters. The password must have at least 8.
+6. Character comparison (char >= 'A' && char <= 'Z'): checks for a capital letter. The special-character check uses many === comparisons joined with || (OR).
+7. if / else if / else: decides what to do. Used for password rules, error messages and grade selection.
+8. Logical operators && (AND), || (OR), ! (NOT): combine conditions.
+9. classList.add(): adds a CSS class to an element (error or success message).
+10. textContent: sets the plain text of an element.
+11. setTimeout(function, time): runs a function once after a delay. Waits 1000 ms after login and then shows the grading section.
+12. style.display: shows or hides a section (login section / grading section).
+13. localStorage.setItem() / getItem(): save and read data in the browser permanently as key-value text.
+14. JSON.stringify(): converts an array/object into text for storage. JSON.parse(): converts the text back into an array/object.
+15. parseFloat(): converts the entered marks to numbers.
+16. || 0 : gives 0 if the value is empty or not a number.
+17. calculateGrade(perc): user-defined function that returns A (80 or more), B (60 or more), C (40 or more), D (33 or more) or F.
+18. Calculations: total = sum of four marks, percentage = (total / 400) x 100, status = Pass if percentage >= 40, otherwise Fail.
+19. .toFixed(1): rounds the percentage to 1 decimal place.
+20. Date.now(): gives a unique id to each student record.
+21. .push() adds a student to the array. .splice(index, 1) removes one student from the array.
+22. .forEach(): goes through all students to build the table rows. document.createElement('tr') creates a row, appendChild() adds it.
+23. confirm(): asks for confirmation before deleting a record.
+24. form.reset(): clears all the fields of the form.
+25. loadStudents() and renderTable(): functions that read the saved students and show them in the table.
+
+
+Software Required:
+1. HTML
+2. CSS
+3. JavaScript
+4. Visual Studio Code
+5. Google Chrome
+
+Conclusion:
+A login form with password validation and a grading system were implemented. The password is validated with a loop and conditions, and after a successful login the user can enter marks of four subjects. The program calculates the total, percentage, grade and Pass/Fail status using control structures, shows the results in a table, and allows records to be deleted. Logout returns to the login screen.

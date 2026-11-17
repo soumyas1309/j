@@ -1,0 +1,46 @@
+Practical Number: 5
+
+Practical Title: Shopping Cart Calculator with Discount Logic
+
+Aim:
+Apply array methods and object handling; create a cart total calculator with discount logic.
+
+Theory:
+Concepts
+1. Array: an ordered list of values stored in one variable. The cart is an array of product objects.
+2. Object: stores related data as key-value pairs. Each product is an object {id, name, price, qty, total}.
+3. Discount logic: discount = total x 20%, final amount = total - discount.
+
+Functions, methods and keywords used in the code
+1. let cart = [] and let idCounter = 1: global variables (cart array and id counter).
+2. formatINR(amount): arrow function stored in a const. It formats a number as Indian Rupees.
+3. .toLocaleString('en-IN', {...}): formats numbers with Indian comma style and fixed 2 decimals.
+4. addProduct(): reads name, price and quantity, validates them, creates a product object and adds it to the cart.
+5. .trim(): removes spaces. parseFloat(): text to decimal number. parseInt(): text to whole number. isNaN(): checks for invalid numbers.
+6. if conditions with alert(): show messages for an empty name, invalid price or invalid quantity.
+7. idCounter++: post-increment operator. Gives a new id to every product.
+8. .push(): adds the product object to the cart array.
+9. .filter(): returns a new array without the deleted item (item.id !== id). Used in deleteProduct().
+10. confirm(): asks the user to confirm before deleting.
+11. .forEach(): goes through every cart item to build the table rows and lists.
+12. .reduce((sum, item) => sum + item.total, 0): adds all item totals into the total amount.
+13. document.createElement('tr') and appendChild(): create and add table rows and list items.
+14. Template literals (`...${item.name}...`): used to write the HTML of each row.
+15. .innerHTML, .innerText: set the content of elements.
+16. calculateTotals(): finds total, 20% discount (totalAmount x 0.20) and final amount, then calls renderLists().
+17. renderLists(): puts items with price < 1000 in the low-cost list, price > 1000 in the expensive list, and all items in the item summary.
+18. style.display: hides or shows the 'No items found' messages.
+19. document.addEventListener('DOMContentLoaded'): runs the code after the page is fully loaded.
+20. addEventListener('keypress'): the Enter key adds the product.
+21. .focus(): moves the cursor to the input box.
+
+
+Software Required:
+1. HTML
+2. CSS
+3. JavaScript
+4. Visual Studio Code
+5. Google Chrome
+
+Conclusion:
+A shopping cart calculator was developed. Products can be added and deleted, the total amount is found using reduce(), a 20% discount is applied, and the final amount is displayed. The items are also separated into low-cost and expensive lists and an item summary is shown. Array methods and objects were used successfully.
